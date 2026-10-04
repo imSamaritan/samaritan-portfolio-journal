@@ -178,18 +178,56 @@ body {
    Top Header / Banner Spacing & Burger Menu Styling
    ---------------------------------------------------- */
 
-/* Top header / banner padding */
-.navbar {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+/* Fixed Navigation Support & Top Banner Alignment */
+:root {
+    --nav-height-desktop: 4.85rem;
+    --nav-height-mobile: 4.25rem;
 }
 
-/* Desktop navbar sections spacing */
+.navbar.is-fixed-top {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40 !important;
+    box-sizing: border-box;
+}
+
+body.has-navbar-fixed-top,
+body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#app-main {
+    flex: 1 0 auto;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+#app-main > .hero:first-child {
+    margin-top: 0 !important;
+}
+
+/* Desktop Viewport (>= 1024px) */
 @media screen and (min-width: 1024px) {
+    .navbar.is-fixed-top {
+        height: var(--nav-height-desktop);
+        min-height: var(--nav-height-desktop) !important;
+        max-height: var(--nav-height-desktop);
+        padding-top: 0.8rem !important;
+        padding-bottom: 0.8rem !important;
+    }
+
+    html.has-navbar-fixed-top {
+        padding-top: var(--nav-height-desktop) !important;
+    }
+
     .navbar .container {
         display: flex;
         align-items: center;
         gap: 2.5rem;
+        height: 100%;
     }
 
     .navbar-menu {
@@ -221,8 +259,40 @@ body {
     }
 }
 
-/* Mobile dropdown sections spacing & background */
+/* Mobile Viewport (< 1024px) */
 @media screen and (max-width: 1023px) {
+    .navbar.is-fixed-top {
+        height: var(--nav-height-mobile);
+        min-height: var(--nav-height-mobile) !important;
+        max-height: var(--nav-height-mobile);
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    html.has-navbar-fixed-top {
+        padding-top: var(--nav-height-mobile) !important;
+    }
+
+    .navbar-brand {
+        min-height: calc(var(--nav-height-mobile) - 1rem) !important;
+        height: calc(var(--nav-height-mobile) - 1rem);
+        align-items: center;
+    }
+
+    .navbar-brand .navbar-item {
+        padding: 0 0.75rem;
+    }
+
+    .navbar-burger {
+        height: calc(var(--nav-height-mobile) - 1rem) !important;
+        width: calc(var(--nav-height-mobile) - 1rem) !important;
+    }
+
+    .navbar.is-fixed-top .navbar-menu.is-active {
+        max-height: calc(100vh - var(--nav-height-mobile));
+        overflow-y: auto;
+    }
+
     .navbar-menu.is-active {
         padding: 1.25rem 1.5rem !important;
         background: linear-gradient(180deg, #051630 0%, #003682 100%) !important;

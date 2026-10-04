@@ -24,7 +24,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= rtrim($appUrl ?? '', '/') ?>/css/custom.css">
 </head>
-<body class="has-navbar-fixed-top">
+<body>
     <?= $this->fetch('partials/navbar.php', [
         'currentNav' => $currentNav ?? '',
         'appName' => $appName ?? '',
