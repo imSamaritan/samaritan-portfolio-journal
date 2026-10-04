@@ -98,3 +98,89 @@ body {
     box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.65), 0 16px 36px rgba(0, 209, 178, 0.25);
 }
 
+/* ----------------------------------------------------
+   Top Header / Banner Spacing & Burger Menu Styling
+   ---------------------------------------------------- */
+
+/* Top header / banner padding */
+.navbar {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Desktop navbar sections spacing */
+@media screen and (min-width: 1024px) {
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .navbar-menu {
+        display: flex !important;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+
+    .navbar-start {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem !important;
+        margin-left: 2rem !important;
+    }
+
+    .navbar-start .navbar-item {
+        padding: 0.6rem 1.2rem !important;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .navbar-start .navbar-item:hover {
+        transform: translateY(-1px);
+    }
+}
+
+/* Mobile dropdown sections spacing */
+@media screen and (max-width: 1023px) {
+    .navbar-menu.is-active {
+        padding: 1.25rem 1.5rem !important;
+    }
+
+    .navbar-menu.is-active .navbar-start {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem !important;
+    }
+
+    .navbar-menu.is-active .navbar-item {
+        padding: 0.75rem 1rem !important;
+        border-radius: 8px;
+    }
+}
+
+/* Burger Menu White Styling */
+.navbar-burger {
+    color: #ffffff !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-burger span {
+    color: #ffffff !important;
+    background-color: #ffffff !important;
+}
+
+.navbar-burger:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-burger:hover span {
+    background-color: #ffffff !important;
+}
+
+.navbar-burger.is-active span {
+    background-color: #ffffff !important;
+}
+
+

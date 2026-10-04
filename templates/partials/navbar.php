@@ -8,8 +8,8 @@ $base = rtrim($appUrl ?? '', '/');
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item navbar-brand-logo is-flex is-align-items-center has-text-weight-bold is-size-5" href="<?= $base ?>/">
-                <img src="<?= $base ?>/assets/logo.png" alt="<?= htmlspecialchars($appName ?? 'Portfolio') ?>" class="app-navbar-logo mr-2">
-                <span><?= htmlspecialchars($appName ?? 'Portfolio') ?></span>
+                <img src="<?= $base ?>/assets/logo.png" alt="imsamaritan" class="app-navbar-logo mr-2">
+                <span>imsamaritan</span>
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" 
