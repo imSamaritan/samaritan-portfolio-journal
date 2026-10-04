@@ -4,7 +4,7 @@
 /** @var string $appUrl */
 $base = rtrim($appUrl ?? '', '/');
 ?>
-<nav class="navbar is-dark is-spaced has-shadow" role="navigation" aria-label="main navigation" x-data="{ isMobileNavOpen: false }">
+<nav class="navbar is-dark is-fixed-top has-shadow" role="navigation" aria-label="main navigation" x-data="{ isMobileNavOpen: false }">
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item navbar-brand-logo is-flex is-align-items-center has-text-weight-bold is-size-5" href="<?= $base ?>/">

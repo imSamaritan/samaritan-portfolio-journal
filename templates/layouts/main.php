@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" class="has-navbar-fixed-top">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= rtrim($appUrl ?? '', '/') ?>/css/custom.css">
 </head>
-<body class="has-navbar-fixed-top-widescreen">
+<body class="has-navbar-fixed-top">
     <?= $this->fetch('partials/navbar.php', [
         'currentNav' => $currentNav ?? '',
         'appName' => $appName ?? '',
