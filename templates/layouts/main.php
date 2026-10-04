@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00d1b2">
+    <meta name="theme-color" content="#004aad">
     <title><?= htmlspecialchars($pageTitle ?? 'Portfolio') ?> | <?= htmlspecialchars($appName ?? 'Portfolio') ?></title>
     
     <!-- Favicon & Touch Icons -->

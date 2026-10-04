@@ -1,6 +1,19 @@
 /* Custom Portfolio styles augmenting Bulma CSS */
 :root {
-    --primary-accent: #00d1b2;
+    --logo-cyan: #5cdee5;
+    --logo-cyan-glow: rgba(92, 222, 229, 0.45);
+    --logo-cyan-bright: #3cd0e2;
+    --logo-blue: #004aad;
+    --logo-blue-deep: #04142d;
+    --logo-blue-dark: #002d6b;
+    --primary-accent: #004aad;
+
+    /* Signature Logo Gradients matching avatar artwork */
+    --gradient-hero: linear-gradient(135deg, #04142d 0%, #003682 45%, #004aad 72%, #38c8dc 100%);
+    --gradient-navbar: linear-gradient(135deg, #041226 0%, #003072 55%, #004aad 80%, #1898c8 100%);
+    --gradient-footer: linear-gradient(135deg, #020a16 0%, #04142d 50%, #002e6b 100%);
+    --gradient-btn-primary: linear-gradient(135deg, #004aad 0%, #1ab5ce 100%);
+    --gradient-btn-primary-hover: linear-gradient(135deg, #003d90 0%, #3cd0e2 100%);
 }
 
 body {
@@ -25,7 +38,7 @@ body {
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 74, 173, 0.15);
 }
 
 /* Application Logo & Avatar Styles */
@@ -42,13 +55,13 @@ body {
     max-height: 38px !important;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.45);
+    box-shadow: 0 0 0 2px var(--logo-cyan-glow);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .navbar-brand-logo:hover .app-navbar-logo {
     transform: scale(1.08) rotate(3deg);
-    box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.9), 0 4px 12px rgba(0, 209, 178, 0.35);
+    box-shadow: 0 0 0 2px var(--logo-cyan), 0 4px 12px var(--logo-cyan-glow);
 }
 
 .app-footer-logo {
@@ -56,13 +69,13 @@ body {
     height: 44px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px rgba(92, 222, 229, 0.35);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .app-footer-logo:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.7);
+    box-shadow: 0 0 0 2px var(--logo-cyan), 0 4px 14px var(--logo-cyan-glow);
 }
 
 .hero-avatar-wrapper {
@@ -75,13 +88,13 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.45), 0 10px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 0 4px var(--logo-cyan-glow), 0 10px 30px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-avatar:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.85), 0 14px 35px rgba(0, 209, 178, 0.35);
+    box-shadow: 0 0 0 4px var(--logo-cyan), 0 14px 35px rgba(92, 222, 229, 0.4);
 }
 
 .about-avatar {
@@ -89,13 +102,76 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.35), 0 12px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 4px var(--logo-cyan-glow), 0 12px 32px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-avatar:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.65), 0 16px 36px rgba(0, 209, 178, 0.25);
+    box-shadow: 0 0 0 4px var(--logo-cyan), 0 16px 36px var(--logo-cyan-glow);
+}
+
+/* ----------------------------------------------------
+   Logo-Matched Gradient Backgrounds (Replacing Dark)
+   ---------------------------------------------------- */
+
+/* Navbar Gradient */
+.navbar.is-dark {
+    background: var(--gradient-navbar) !important;
+    border-bottom: 1px solid rgba(92, 222, 229, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 74, 173, 0.25);
+}
+
+/* Hero Sections Gradient */
+.hero.is-dark {
+    background: var(--gradient-hero) !important;
+    color: #ffffff !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero.is-dark .title {
+    color: #ffffff !important;
+}
+
+.hero.is-dark .subtitle {
+    color: #e2f5f8 !important;
+}
+
+/* Footer Gradient */
+.footer.has-background-dark {
+    background: var(--gradient-footer) !important;
+    border-top: 1px solid rgba(92, 222, 229, 0.15);
+    color: #e2f5f8 !important;
+}
+
+.footer.has-background-dark strong {
+    color: #ffffff !important;
+}
+
+/* Primary Buttons with Logo Gradient */
+.button.is-primary {
+    background: var(--gradient-btn-primary) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 74, 173, 0.35);
+    transition: all 0.25s ease;
+}
+
+.button.is-primary:hover {
+    background: var(--gradient-btn-primary-hover) !important;
+    box-shadow: 0 6px 20px rgba(60, 208, 226, 0.45);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* Light Tags matched with Logo Cyan */
+.tag.is-primary.is-light {
+    background-color: rgba(92, 222, 229, 0.18) !important;
+    color: #5cdee5 !important;
+    border: 1px solid rgba(92, 222, 229, 0.35) !important;
+    font-weight: 600;
 }
 
 /* ----------------------------------------------------
@@ -133,18 +209,25 @@ body {
     .navbar-start .navbar-item {
         padding: 0.6rem 1.2rem !important;
         border-radius: 8px;
+        color: #ffffff !important;
         transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .navbar-start .navbar-item:hover {
+    .navbar-start .navbar-item:hover,
+    .navbar-start .navbar-item.is-active {
+        background-color: rgba(255, 255, 255, 0.14) !important;
+        color: var(--logo-cyan) !important;
         transform: translateY(-1px);
     }
 }
 
-/* Mobile dropdown sections spacing */
+/* Mobile dropdown sections spacing & background */
 @media screen and (max-width: 1023px) {
     .navbar-menu.is-active {
         padding: 1.25rem 1.5rem !important;
+        background: linear-gradient(180deg, #051630 0%, #003682 100%) !important;
+        border: 1px solid rgba(92, 222, 229, 0.25);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
     .navbar-menu.is-active .navbar-start {
@@ -156,6 +239,13 @@ body {
     .navbar-menu.is-active .navbar-item {
         padding: 0.75rem 1rem !important;
         border-radius: 8px;
+        color: #ffffff !important;
+    }
+
+    .navbar-menu.is-active .navbar-item:hover,
+    .navbar-menu.is-active .navbar-item.is-active {
+        background-color: rgba(255, 255, 255, 0.12) !important;
+        color: var(--logo-cyan) !important;
     }
 }
 
@@ -182,5 +272,3 @@ body {
 .navbar-burger.is-active span {
     background-color: #ffffff !important;
 }
-
-
