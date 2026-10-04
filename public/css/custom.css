@@ -1,0 +1,100 @@
+/* Custom Portfolio styles augmenting Bulma CSS */
+:root {
+    --primary-accent: #00d1b2;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#app-main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Application Logo & Avatar Styles */
+.navbar-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.app-navbar-logo {
+    width: 38px;
+    height: 38px;
+    max-height: 38px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar-brand-logo:hover .app-navbar-logo {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.9), 0 4px 12px rgba(0, 209, 178, 0.35);
+}
+
+.app-footer-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.app-footer-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(0, 209, 178, 0.7);
+}
+
+.hero-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.45), 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.85), 0 14px 35px rgba(0, 209, 178, 0.35);
+}
+
+.about-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.35), 0 12px 32px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-avatar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.65), 0 16px 36px rgba(0, 209, 178, 0.25);
+}
+
