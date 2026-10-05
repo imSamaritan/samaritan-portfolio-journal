@@ -29,8 +29,8 @@
     <!-- Bulma CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 
-    <!-- Boxicons (Lightweight Font Icons) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Boxicons (Lightweight Font Icons via Official CDN) -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     
     <!-- Alpine.js Theme Store Initializer -->
     <script>
