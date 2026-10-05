@@ -12,6 +12,16 @@ $base = rtrim($appUrl ?? '', '/');
                 <span>imsamaritan</span>
             </a>
 
+            <div class="is-flex is-align-items-center ml-auto mr-2 is-hidden-desktop">
+                <button class="theme-toggle-btn button is-small" 
+                        @click="$store.theme.toggle()" 
+                        aria-label="Toggle dark mode"
+                        type="button"
+                        :title="$store.theme.isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+                    <i class="bx" :class="$store.theme.isDark ? 'bx-sun' : 'bx-moon'"></i>
+                </button>
+            </div>
+
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" 
                :class="{ 'is-active': isMobileNavOpen }" 
                @click="isMobileNavOpen = !isMobileNavOpen">
@@ -31,8 +41,18 @@ $base = rtrim($appUrl ?? '', '/');
                 <a class="navbar-item <?= ($currentNav ?? '') === 'contact' ? 'is-active' : '' ?>" href="<?= $base ?>/contact" @click="isMobileNavOpen = false">Contact</a>
             </div>
 
-            <div class="navbar-end" id="pwa-install-container" style="display: none;">
-                <div class="navbar-item">
+            <div class="navbar-end is-flex is-align-items-center">
+                <div class="navbar-item is-hidden-touch">
+                    <button class="theme-toggle-btn button is-small" 
+                            @click="$store.theme.toggle()" 
+                            aria-label="Toggle dark mode"
+                            type="button"
+                            :title="$store.theme.isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+                        <i class="bx" :class="$store.theme.isDark ? 'bx-sun' : 'bx-moon'"></i>
+                    </button>
+                </div>
+
+                <div class="navbar-item" id="pwa-install-container" style="display: none;">
                     <button id="pwa-install-btn" class="button is-primary is-small" type="button">
                         <span class="mr-1">📱</span>
                         <span>Install App</span>
