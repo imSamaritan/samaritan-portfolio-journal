@@ -1,5 +1,20 @@
+/* Google Fonts Typography Import */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Custom Portfolio styles augmenting Bulma CSS */
 :root {
+    /* Google Fonts Typography Definitions */
+    --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --font-condensed: 'Roboto Condensed', 'Roboto', sans-serif;
+    --font-mono: 'Google Sans Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* Bulma 1.0 Typography System Overrides */
+    --bulma-body-family: var(--font-sans);
+    --bulma-family-primary: var(--font-sans);
+    --bulma-family-secondary: var(--font-condensed);
+    --bulma-family-code: var(--font-mono);
+    --bulma-title-family: var(--font-condensed);
+
     --logo-cyan: #5cdee5;
     --logo-cyan-glow: rgba(92, 222, 229, 0.45);
     --logo-cyan-bright: #3cd0e2;
@@ -15,6 +30,137 @@
     --gradient-btn-primary: linear-gradient(135deg, #004aad 0%, #1ab5ce 100%);
     --gradient-btn-primary-hover: linear-gradient(135deg, #003d90 0%, #3cd0e2 100%);
 }
+
+/* ----------------------------------------------------
+   Global Typography: Roboto, Roboto Condensed & Google Sans Code
+   ---------------------------------------------------- */
+html, body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings & Display Titles using Roboto Condensed */
+h1, h2, h3, h4, h5, h6,
+.title,
+.subtitle {
+    font-family: var(--font-condensed);
+}
+
+.title {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: inherit;
+}
+
+.subtitle {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.hero .title {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.hero .subtitle {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* Navigation & Button Typography */
+.navbar-brand-logo span {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.navbar-item {
+    font-family: var(--font-condensed);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.button {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+/* Monospace & Code Elements using Google Sans Code */
+code,
+pre,
+kbd,
+samp,
+.tag,
+.is-family-code,
+.font-mono {
+    font-family: var(--font-mono) !important;
+}
+
+code {
+    font-size: 0.88em;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+pre {
+    font-family: var(--font-mono) !important;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    padding: 1.25rem;
+    border-radius: 8px;
+}
+
+pre code {
+    font-size: inherit;
+    padding: 0;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+}
+
+.tag.is-medium {
+    font-size: 0.95rem;
+}
+
+/* Form Elements Typography */
+.label {
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    letter-spacing: 0.015em;
+}
+
+.input,
+.textarea,
+.select select {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+}
+
+/* Card Titles and Text */
+.card .title {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+}
+
+.card .content,
+.content p {
+    font-family: var(--font-sans);
+    line-height: 1.65;
+}
+
+/* Utility Font Family Classes */
+.is-family-sans { font-family: var(--font-sans) !important; }
+.is-family-condensed { font-family: var(--font-condensed) !important; }
+.is-family-code, .is-family-monospace { font-family: var(--font-mono) !important; }
 
 body {
     min-height: 100vh;

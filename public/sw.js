@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-pwa-v4';
+const CACHE_NAME = 'portfolio-pwa-v5';
 const PRECACHE_ASSETS = [
     './offline.html',
     './css/custom.css',
@@ -14,7 +14,8 @@ const PRECACHE_ASSETS = [
     'https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css',
     'https://cdn.jsdelivr.net/npm/boxicons@2.1.4/fonts/boxicons.woff2',
     'https://cdn.jsdelivr.net/npm/boxicons@2.1.4/fonts/boxicons.woff',
-    'https://cdn.jsdelivr.net/npm/boxicons@2.1.4/fonts/boxicons.ttf'
+    'https://cdn.jsdelivr.net/npm/boxicons@2.1.4/fonts/boxicons.ttf',
+    'https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'
 ];
 
 // 1. Install event: Pre-cache static assets
