@@ -20,12 +20,28 @@ AppFactory::setContainer($container);
 // 3. Create Slim Application
 $app = AppFactory::create();
 
-// 4. Auto-detect or configure Base Path for WAMP / subdirectories
-$appUrl = $_ENV['APP_URL'] ?? '';
-$basePath = parse_url($appUrl, PHP_URL_PATH);
-if (!empty($basePath) && $basePath !== '/') {
-    $app->setBasePath(rtrim($basePath, '/'));
+// 4. Dynamically detect Base Path & App URL (supports VirtualHost domains & WAMP subdirectories)
+$uriPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
+$configuredAppUrl = $_ENV['APP_URL'] ?? '';
+$configuredPath = rtrim(parse_url($configuredAppUrl, PHP_URL_PATH) ?? '', '/');
+
+if (!empty($configuredPath) && str_starts_with($uriPath, $configuredPath)) {
+    $basePath = $configuredPath;
+} else {
+    $basePath = '';
 }
+
+$app->setBasePath($basePath);
+
+// Sync PhpRenderer view attributes with the active virtual host and base path
+$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? parse_url($configuredAppUrl, PHP_URL_HOST) ?? 'localhost';
+$currentAppUrl = $basePath !== '' ? "{$scheme}://{$host}{$basePath}" : "{$scheme}://{$host}";
+
+/** @var \Slim\Views\PhpRenderer $renderer */
+$renderer = $container->get(\Slim\Views\PhpRenderer::class);
+$renderer->addAttribute('appUrl', $currentAppUrl);
+$renderer->addAttribute('basePath', $basePath);
 
 // 5. Register Middlewares
 $app->addBodyParsingMiddleware();
