@@ -1,8 +1,9 @@
-const CACHE_NAME = 'portfolio-pwa-v5';
+const CACHE_NAME = 'portfolio-pwa-v6';
 const PRECACHE_ASSETS = [
     './offline.html',
     './css/custom.css',
     './assets/logo.png',
+    './assets/about-avatar.png',
     './icons/icon-192.png',
     './icons/icon-512.png',
     './icons/favicon.png',
